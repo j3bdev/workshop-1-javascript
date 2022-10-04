@@ -10,8 +10,8 @@
 
 <body>
     <script>
-        let firstValue = prompt("entrer la première valeur :");
-        firstValue = parseInt(firstValue);
+        let firstValue = prompt("entrer la première valeur :"); // donne une valeur String par l'utilisateur 
+        firstValue = parseInt(firstValue); // converti le String en Integer
         let operator = prompt("opertor :");
         let secondValue = prompt("entrer la seconde valeur :");
         secondValue = parseInt(secondValue);
@@ -69,6 +69,7 @@
             }
             return resultat;
         }
+
         console.log(math(operator, firstValue, secondValue));
 
     </script>
