@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let firstValue = prompt("entrer la première valeur :");
+        firstValue = parseInt(firstValue);
+        let operator = prompt("opertor :");
+        let secondValue = prompt("entrer la seconde valeur :");
+        secondValue = parseInt(secondValue);
+        let reponse;
+
+        /* méthode IF ELSE pas optimisé */
+        // if (operator === "+") {
+        //     console.log(parseInt(firstValue) + parseInt(secondValue));
+        // } else if (operator === "*") {
+        //     console.log(parseInt(firstValue) * parseInt(secondValue));
+        // } else if (operator === "-") {
+        //     console.log(parseInt(firstValue) - parseInt(secondValue));
+        // } else if (operator === "/") {
+        //     console.log(parseInt(firstValue) / parseInt(secondValue));
+        // }
+
+        /* méthode switch plus optimisé, mais pas isolé*/
+        // switch (operator) {
+        //     case '+':
+        //         console.log(parseInt(firstValue) + parseInt(secondValue));
+        //         break;
+        //     case '*':
+        //         console.log(parseInt(firstValue) * parseInt(secondValue));
+        //         break;
+        //     case '-':
+        //         console.log(parseInt(firstValue) - parseInt(secondValue));
+        //         break;
+        //     case '/':
+        //         console.log(parseFloat(parseInt(firstValue) / parseInt(secondValue)), 2);
+        //         break;
+        //     default:
+        //         console.log(`l'operateur ${operator} n'est pas valide.`);
+        //     }
+
+
+        /* SWITCH CASE dans un fonction, meilleur choix */
+        function math(ope, fValue, sValue) {
+            let resultat;
+            switch (ope) {
+                case '+':
+                    resultat = (fValue + sValue);
+                    break;
+                case '*':
+                    resultat = fValue * sValue;
+                    break;
+                case '-':
+                    resultat = fValue - (sValue);
+                    break;
+                case '/':
+                    resultat = (fValue) / (sValue);
+                    break;
+                default:
+                    resultat = (`l'operateur ${ope} n'est pas valide.`);
+
+            }
+            return resultat;
+        }
+        console.log(math(operator, firstValue, secondValue));
+
+    </script>
+</body>
+
+</html>
